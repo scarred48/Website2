@@ -1,0 +1,121 @@
+html {
+    background: black;
+    height: 100%;
+}
+
+@font-face {
+    font-family: Hacked;
+    src: url(https://hackedfont.com/HACKED.ttf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+	overflow: hidden;
+	touch-action: none;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    position: absolute;
+	justify-content: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.links img {
+    position: relative;
+    z-index: 1;
+    margin: 0 2px; /* add some margin between the images */
+	border-radius: 50%;
+}
+
+
+.discord {
+    display: inline;
+}
+
+.hide-discord {
+    display: none;
+    color: transparent;
+    transition: opacity 3s;
+    opacity: 1;
+}
+
+button, input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+/* Dropdown button */
+.dropbtn {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Dropdown content */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    font-family: 'Minecraft', sans-serif;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1;}
+  
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Style for the dropdown menu */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Rest of the CSS code remains the same */
+  .clock {
+    display: flex;
+    align-items: center;
+    position: absolute;
+	justify-content: center;
+    top: 0;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    color: #f1f1f1;
+    font-family: Hacked;
+    word-spacing: 5px;
+  }
+  
