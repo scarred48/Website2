@@ -100,6 +100,7 @@ button, input[type="submit"], input[type="reset"] {
     flex: 1; /* add this line */
   }
   
+
   
   /* Change color of dropdown links on hover */
   .dropdown-content a:hover {background-color: #f1f1f1; color: #000;}

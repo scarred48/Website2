@@ -52,8 +52,8 @@ function copy() {
 
 window.onload = () => {
   const sources = [
-    { src: 'https://www.dropbox.com/s/o3pj3opnbtxxv1y/We%20Don%27t%20Get%20Along?dl=1', type: 'audio/mpeg' },
-    { src: 'https://www.dropbox.com/s/fkzhhr5ou5p90di/Had_To.m4a?dl=1', type: 'audio/mpeg' },
+    { src: 'https://www.dropbox.com/s/8hi2dedm1q486om/Juice%20WRLD%20-%20We%20Don%27t%20Get%20Along%20%28unreleased%29%20%28lyrics%29%20%281%29.mp3?dl=1'/*, type: 'audio/mpeg'*/ },
+    { src: 'https://www.dropbox.com/s/fkzhhr5ou5p90di/Had_To.m4a?dl=1'/*, type: 'audio/mpeg'*/ },
     //{ src: '', type: 'audio/mpeg' }
   ];
   const audio = document.getElementById('myAudio');
@@ -67,25 +67,34 @@ window.onload = () => {
     audio.type = randomSource.type;
     audio.play();
   }
-  
-  playRandomSong();
-  
+    
   document.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-    } else {
+    if (!audio.paused) {
       audio.pause();
+    } else {
+      playRandomSong();
     }
   });
   
   audio.addEventListener('click', () => {
-    if (audio.paused) {
-      audio.play();
-    } else {
+    if (!audio.paused) {
       audio.pause();
+    } else {
+      playRandomSong();
+
     }
   });
 };
+
+var promise = audio.play();
+
+if (promise!== undefined) {
+  promise.then(function() {
+  }).catch(function(error) {
+    console.log(error);
+  });
+}
+
 
 
 function updateTime() {
