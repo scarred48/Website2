@@ -51,6 +51,15 @@ function copy() {
 
 
 window.onload = () => {
+  function updateClock() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+    var timeString = hours + ':' + minutes + ':' + seconds;
+    document.querySelector('.clock').textContent = timeString;
+  }
+  setInterval(updateClock, 1);
   const sources = [
     { src: 'https://www.dropbox.com/s/8hi2dedm1q486om/Juice%20WRLD%20-%20We%20Don%27t%20Get%20Along%20%28unreleased%29%20%28lyrics%29%20%281%29.mp3?dl=1'/*, type: 'audio/mpeg'*/ },
     { src: 'https://www.dropbox.com/s/fkzhhr5ou5p90di/Had_To.m4a?dl=1'/*, type: 'audio/mpeg'*/ },
@@ -95,19 +104,6 @@ if (promise!== undefined) {
   });
 }
 
-
-
-function updateTime() {
-  const now = new Date();
-  const hours = now.getHours().toString().padStart(2, '0');
-  const minutes = now.getMinutes().toString().padStart(2, '0');
-  const seconds = now.getSeconds().toString().padStart(2, '0');
-  const clockElement = document.querySelector('.clock');
-  clockElement.textContent = `${hours}:${minutes}:${seconds}`;
-}
-
-updateTime();
-setInterval(updateTime, 1000);
 
 
   
