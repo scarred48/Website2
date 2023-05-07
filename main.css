@@ -131,3 +131,13 @@ button, input[type="submit"], input[type="reset"] {
     word-spacing: 5px;
   }
   
+
+  .image-effect {
+    transition: transform 0.3s ease-out;
+  }
+  
+
+  .image-effect:hover {
+    transform: scale(1.1);
+  }
+  
