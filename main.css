@@ -140,4 +140,15 @@ button, input[type="submit"], input[type="reset"] {
   .image-effect:hover {
     transform: scale(1.1);
   }
+
+
+  .current-file {
+    position: fixed;
+    top: 10px; 
+    left: 10px; 
+    z-index: 9999; 
+    color: white;
+    font-family: Hacked;
+  }
+  
   

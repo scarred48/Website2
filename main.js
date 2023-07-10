@@ -63,11 +63,13 @@ window.onload = () => {
   const sources = [
     { src: 'https://www.dropbox.com/s/8hi2dedm1q486om/Juice%20WRLD%20-%20We%20Don%27t%20Get%20Along%20%28unreleased%29%20%28lyrics%29%20%281%29.mp3?dl=1'/*, type: 'audio/mpeg'*/ },
     { src: 'https://www.dropbox.com/s/fkzhhr5ou5p90di/Had_To.m4a?dl=1'/*, type: 'audio/mpeg'*/ },
+    { src: 'https://www.dropbox.com/s/8k3fmuob93ln3mf/Juice%20WRLD-%20Biscotti%20In%20The%20Air%20%28OG%20File%29.mp3?dl=1'/*, type: 'audio/mpeg'*/ }
     //{ src: '', type: 'audio/mpeg' }
   ];
   const audio = document.getElementById('myAudio');
   audio.volume = 0.02;
   audio.loop = true;
+  const currentFileElement = document.querySelector('.current-file');
   
   function playRandomSong() {
     const randomIndex = Math.floor(Math.random() * sources.length);
@@ -75,11 +77,19 @@ window.onload = () => {
     audio.src = randomSource.src;
     audio.type = randomSource.type;
     audio.play();
+    if (randomIndex === 0 ) {
+      currentFileElement.textContent = "JuiceWRLD - We Don't Get Along 🎵";
+    } else if (randomIndex === 1) {
+      currentFileElement.textContent = "JuiceWRLD - Had To 🎵";
+    } else if (randomIndex === 2) {
+      currentFileElement.textContent = "JuiceWRLD - Biscotti In The Air 🎵";
+    }
   }
     
   document.addEventListener('click', () => {
     if (!audio.paused) {
       audio.pause();
+      currentFileElement.textContent = currentFileElement.textContent + "| paused"
     } else {
       playRandomSong();
     }
@@ -88,6 +98,7 @@ window.onload = () => {
   audio.addEventListener('click', () => {
     if (!audio.paused) {
       audio.pause();
+      currentFileElement.textContent = currentFileElement.textContent + "| paused"
     } else {
       playRandomSong();
 
