@@ -15,6 +15,15 @@ const columns = canvas.width;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
+function updateCanvasSize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  //console.log("Changed to " + canvas.width + " " + canvas.height);
+}
+
+window.addEventListener('resize', updateCanvasSize);
+
 const rainDrops = [];
 
 for( let x = 0; x < columns; x++ ) {
